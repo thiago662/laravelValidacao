@@ -20,7 +20,17 @@
 
                     <label for="nome">Nome do cliente</label>
 
-                    <input type="text" id="nome" class="form-control" name="nome" placeholder="Nome...">
+                    <input type="text" id="nome" class="form-control {{ $errors->has('nome') ? 'is-invalid' : '' }}" name="nome" placeholder="Nome...">
+
+                    @if ($errors->has('nome'))
+
+                        <div class="invalid-feedback">
+
+                            {{ $errors->first('nome') }}
+
+                        </div>
+                        
+                    @endif
 
                 </div>
             
